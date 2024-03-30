@@ -1,0 +1,25 @@
+{% extends 'todo/main.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+    <h1 style="color: white;">Register</h1>
+</div>
+<div class="card-body">
+    <form action="" method="post">
+        {% csrf_token %}
+        <label style="color: white; ">{{ form.username.label }}</label>
+        {{ form.username }}
+    
+        <label style="color: white;">{{ form.password1.label }}</label>
+        {{ form.password1 }}
+    
+        <label style="color: white;">{{ form.password2.label }}</label>
+        {{ form.password2 }}
+        <br><br>
+        <input class="button" type="submit" value="Register Now" >
+    
+        <small><p style="color: white;">Have an account already? <a href="{% url 'login' %}"><h2 style="color: white;">Login Now</h2></a></p></small>
+     </form>
+</div>
+{% endblock content %}
